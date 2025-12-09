@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -401,39 +400,209 @@ img {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
+/* --- STATUS REPORT STYLES --- */
+
+.status-intro {
+    margin-bottom: 20px;
+    color: #495057;
+    font-size: 14px;
+}
+
+.status-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.status-dot.green { background: #2e7d32; }
+.status-dot.yellow { background: #f9a825; }
+.status-dot.red { background: #c62828; }
+
+.status-weeks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.status-week {
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.status-week-header {
+    padding: 16px 24px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.status-week-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.status-week-label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.status-week-period {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.status-health-pill {
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.status-green {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.status-yellow {
+    background: #fff8e1;
+    color: #f9a825;
+    border: 1px solid #ffe082;
+}
+
+.status-red {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.status-week-body {
+    padding: 20px 24px 24px;
+    border-top: 1px solid #e9ecef;
+}
+
+.status-exec {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.status-exec strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.status-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.status-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14px;
+}
+
+.status-card h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #343a40;
+}
+
+.status-card ul {
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+.status-card ul li {
+    margin-bottom: 4px;
+}
+
+.status-milestones-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.status-milestones-table th,
+.status-milestones-table td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 6px 4px;
+    text-align: left;
+}
+
+.status-milestones-table th {
+    font-weight: 600;
+    color: #495057;
+}
+
+.status-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.status-week.collapsed .status-week-body {
+    display: none;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
-    
+
     .header {
         padding: 40px 20px;
     }
-    
+
     .header h1 {
         font-size: 28px;
     }
-    
+
     .content {
         padding: 20px;
     }
-    
+
     .nav-pills {
         padding: 15px 20px;
     }
-    
+
     .info-grid, .scope-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .grid-placeholder > div {
         grid-template-columns: 1fr;
     }
-    
+
     .stakeholder-table {
         font-size: 12px;
     }
-    
+
     .stakeholder-table th,
     .stakeholder-table td {
         padding: 10px 8px;
@@ -443,711 +612,1239 @@ img {
 </head>
 <body>
 <div class="container">
-<div class="header">
-<h1>Data Analytics Job Entry</h1>
-<p>Project Charter - Managing IT Projects Course</p>
-</div>
-<div class="nav-pills">
-<div class="nav-pill" onclick="scrollToSection('student-info')">Student Info</div>
-<div class="nav-pill" onclick="scrollToSection('section-1')">Project Description</div>
-<div class="nav-pill" onclick="scrollToSection('section-2')">Vision &amp; Mission</div>
-<div class="nav-pill" onclick="scrollToSection('section-3')">Business Case</div>
-<div class="nav-pill" onclick="scrollToSection('section-4')">Scope</div>
-<div class="nav-pill" onclick="scrollToSection('section-5')">Stakeholders</div>
-<div class="nav-pill" onclick="scrollToSection('section-6')">Methodology</div>
-<div class="nav-pill" onclick="scrollToSection('section-7')">Tools</div>
-<div class="nav-pill" onclick="scrollToSection('section-8')">Deliverables</div>
-<div class="nav-pill" onclick="scrollToSection('section-9')">WBS</div>
-<div class="nav-pill" onclick="scrollToSection('section-10')">Budget</div>
-<div class="nav-pill" onclick="scrollToSection('section-11')">Status Report</div></div>
-<div class="content">
-<div class="student-info" id="student-info">
-<h3>Student Information</h3>
-<div class="info-grid">
-<div class="info-item">
-<div class="info-label">Student Name:</div>
-<div class="info-value">Tehreem Fatima Butt</div>
-</div>
-<div class="info-item">
-<div class="info-label">Course:</div>
-<div class="info-value">Managing IT Projects</div>
-</div>
-<div class="info-item">
-<div class="info-label">Semester:</div>
-<div class="info-value">Fall 2025</div>
-</div>
-</div>
-</div>
-<div class="section" id="section-1">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📋 1. Project Title &amp; Description</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<h3>Project Title: Data Analytics Job Entry</h3>
-<p>Apply to at least one Data Analytics position using complied material that showcases my skills/projects in a easy to navigate way while also being visually interesting.</p>
-</div>
-</div>
-<div class="section" id="section-2">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">🎯 2. Vision, Mission &amp; Strategy Alignment</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<div class="placeholder">
-<h4>Personal Mission Connection:</h4>
-<p>My mission is to gain more experience, gain more valuable skills in data analytics, and to actually enjoy the work that I do. This project supports my personal mission by providing a base platform where I can continue to add new skills and projects I will accumilate over time. It provides me with a tangible incentive so I can stay motivated in becoming more skilled in Data Anlaytics</p>
-<h4>Vision Alignment:</h4>
-<p>My vision is to have a data analytics position in a company whose values I align with, and to be recognized for providing valuable analysis that brings improvement to the business. This portfolio will greatly help me find entry in my prefered job market which is Data Analytics. This porfolio will allow me to confidently submit and persue positions in data analytics that I would previously not be able to confidently do.</p>
-<h4>Strategic Goal Support:</h4>
-<p>This will help me accomplish my strategic goal of using the portfolio to apply to at least one Data Analytics internship/position by the end of the semester. Having a collection of all my projects/skills (or overall achievements) that I can easily submit and would make showcasing myself to businesses that are hiring more efficient.</p>
-</div>
-</div>
-</div>
-<div class="section" id="section-3">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">💼 3. Business Case &amp; Justification</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<div class="placeholder">
-<h4>Professional Value:</h4>
-<p>This project will help me pursue my preferred career as it would be a collection of all my skills, projects, and achievments.</p>
-<h4>Personal Value:</h4>
-<p>This project would provide me with a tangible incentive to continue imporving and adding to. It allows me to also organize and evaluate all my skills, projects, etc., that I have accumulated so far.</p>
-<h4>Learning Outcomes:</h4>
-<p>I believe the main takeaway I would get from this project is project managent skills. I have never really worked on a long term project before it makes me aware of aspects of managing project I never thought of before.</p>
-</div>
-</div>
-</div>
-<div class="section" id="section-4">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">🔍 4. High-Level Scope</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<div class="completed-work">
-</div>
-<div class="scope-grid">
-<div class="scope-card in-scope">
-<h4>✅ In Scope for Semester Project</h4>
-<ul>
-<li>A responsive website with a clean, professional design</li>
-<li>A home page with an introduction and summary about me</li>
-<li>A portfolio section showing 2 data analytics projects with visuals and short explanations</li>
-<li>A resume page with a downloadable PDF option</li>
-<li>A contact form for messages</li>
-<li>A section showing relevant certifications (Google Data Analytics)</li>
-</ul>
-</div>
-<div class="scope-card roadmap">
-<h4>🗺️ Roadmap Items (≤6 Months)</h4>
-<ul>
-<li>Interactive dashboards using Tableau, Power BI, or Python</li>
-<li>Links to LinkedIn and GitHub for automatic updates</li>
-<li>Updates/new project additions</li>
-<li>A custom domain name</li>
-</ul>
-</div>
-<div class="scope-card out-scope">
-<h4>❌ Out of Scope</h4>
-<ul>
-<li>Build a big company-level data system</li>
-<li>Set up automatic data pipelines that refresh by themselves</li>
-<li>Add advanced AI features (like chatbots or recommendations)</li>
-<li>Create a mobile app version of the portfolio</li>
-<li>Support multiple languages</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="section-5">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">👥 5. Stakeholder Register</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<div class="completed-work">
-</div>
-<table class="stakeholder-table">
-<thead>
-<tr>
-<th>Stakeholder</th>
-<th>Category</th>
-<th>Role/Interest</th>
-<th>Power</th>
-<th>Interest</th>
-<th>Engagement Strategy</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Professor / Instructor</td>
-<td>Internal</td>
-<td>Course owner; evaluates deliverables and gives feedback</td>
-<td>High</td>
-<td>High</td>
-<td>Manage Closely – provide regular updates; follow feedback and meet requirements.</td>
-</tr>
-<tr>
-<td>Classmates / Peer Reviewers</td>
-<td>Internal</td>
-<td>Peers who review drafts and provide feedback</td>
-<td>Low</td>
-<td>Medium</td>
-<td>Keep Informed – share drafts and collect feedback during peer reviews.</td>
-</tr>
-<tr>
-<td>Potential Employers</td>
-<td>External</td>
-<td>End-audience who will evaluate portfolio quality and relevance</td>
-<td>High</td>
-<td>High</td>
-<td>Manage Closely – ensure the portfolio is professional, relevant, and easy to navigate.</td>
-</tr>
-<tr>
-<td>Family &amp; Friends</td>
-<td>External</td>
-<td>Support network; provides informal feedback</td>
-<td>Low</td>
-<td>Medium</td>
-<td>Keep Informed – share progress and finished work for encouragement and feedback.</td>
-</tr>
-<tr>
-<td>LinkedIn Network</td>
-<td>External</td>
-<td>Professional network; helps visibility and connections</td>
-<td>Medium</td>
-<td>High</td>
-<td>Keep Informed – publish updates and the portfolio link for discovery.</td>
-</tr>
-<tr>
-<td>GitHub</td>
-<td>External</td>
-<td>Public code hosting and community visibility</td>
-<td>Low</td>
-<td>Medium</td>
-<td>Monitor – host code/projects; lightly monitor interactions.</td>
-</tr>
-<tr>
-<td>Regulatory (Data Privacy/Academic Integrity Policies)</td>
-<td>Regulatory</td>
-<td>Policies that the project must comply with</td>
-<td>High</td>
-<td>Low</td>
-<td>Keep Satisfied – follow privacy, copyright, and academic honesty guidelines.</td>
-</tr>
-<tr>
-<td>Future Clients / Project Collaborators</td>
-<td>External</td>
-<td>Potential partners who may contact based on the portfolio</td>
-<td>Medium</td>
-<td>High</td>
-<td>Keep Informed – use the portfolio as a showcase; respond to inquiries.</td>
-</tr>
-</tbody>
-</table>
-<div class="grid-placeholder">
-<h4>Power–Interest Grid</h4>
-<div>
-<div style="border-left-color:#4caf50;">
-<strong>Manage Closely (High Power, High Interest)</strong>
-<ul>
-<li>Professor / Instructor</li>
-<li>Potential Employers</li>
-</ul>
-</div>
-<div style="border-left-color:#ffc107;">
-<strong>Keep Satisfied (High Power, Low Interest)</strong>
-<ul>
-<li>Regulatory (Data Privacy/Academic Integrity Policies)</li>
-</ul>
-</div>
-<div style="border-left-color:#2196f3;">
-<strong>Keep Informed (Low Power, High Interest)</strong>
-<ul>
-<li>Classmates / Peer Reviewers</li>
-<li>LinkedIn Network</li>
-<li>Future Clients / Project Collaborators</li>
-</ul>
-</div>
-<div style="border-left-color:#9e9e9e;">
-<strong>Monitor (Low Power, Low Interest)</strong>
-<ul>
-<li>GitHub</li>
-<li>Family &amp; Friends</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="section-6">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">⚙️ 6. Project Methodology</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<h3>Explanation:</h3>
-<div class="placeholder">
-<h4>My requirements are well-defined and unlikely to change → Predictive</h4>
-<p>For my project, predictive is a good methodology as it is straightforward and works with my schedule throughout the semester. It defines a start and an end which allows me to stay on task, and lets me comfortably build my portfolio piece by piece.</p>
-</div>
-<img alt="Project Roadmap" src="Roadmap.png"/>
-</div>
-</div>
-<div class="section" id="section-7">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">🛠️ 7. Project Tool Selection</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<h3>Explanation:</h3>
-<div class="placeholder">
-<h4>I chose Microsoft Project (Planner)</h4>
-<p>I chose Microsoft Project (Planner) as my tool for this project because it is well-suited for predictive project management. My project has a fixed end date at the end of the semester, and Microsoft Project allows me to create a detailed schedule with clear dependencies, milestones, and deadlines. Its calendar functionality helps visualize the timeline, ensuring tasks are completed in sequence and on time. This level of structure and control supports the predictive methodology's focus on upfront planning and minimizing risks.</p>
-</div>
-<img alt="Microsoft Planner Screenshot" src="pm_microsoftPlanner.png"/>
-</div>
-</div>
-<div class="section" id="section-8">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📦 8. Deliverables &amp; Definition of Done</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<table class="stakeholder-table">
-<thead>
-<tr>
-<th>Deliverable Name</th>
-<th>Type</th>
-<th>SMART Description</th>
-<th>Definition of Done</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Resume</td>
-<td>Tangible Outcome</td>
-<td>A complete and updated resume with all areas filled out, organized, and reviewed. Complete by the end of the semester (December).</td>
-<td>All sections filled. Updated to the most current information. Reviewed by trusted individuals.</td>
-</tr>
-<tr>
-<td>Hollywood Farmers Market Data Analytics Project</td>
-<td>Tangible Outcome</td>
-<td>Updated, compiled, and polished analytics project that will be ready by October.</td>
-<td>The project is formatted for the portfolio, all relevant visualizations are compiled and organized, and the project is reviewed by trusted individuals.</td>
-</tr>
-<tr>
-<td>AirBnB LA Data Analytics Project</td>
-<td>Tangible Outcome</td>
-<td>Updated, compiled, and polished analytics project that will be ready by October.</td>
-<td>The project is formatted for the portfolio, all relevant visualizations are compiled and organized, and the project is reviewed by trusted individuals.</td>
-</tr>
-<tr>
-<td>Google Data Analytics Certificate</td>
-<td>Tangible Outcome</td>
-<td>Complete Data Analytics certification provided by Google by the end of the semester (December).</td>
-<td>The certificate is granted and ready to be uploaded into my portfolio.</td>
-</tr><tr><td>Job Application</td><td>Tangible Outcome</td><td>Submit one complete application for a Data Analytics internship/position using the portfolio by December 2025</td><td>Position identified, portfolio link included in application, customized materials submitted, confirmation received</td></tr>
-</tr><tr><td>Job Gap Analysis</td><td>Tangible Outcome</td><td>Research and create document discussing skill expectations of Data Analytics positions comparing to my current skills by December 2025</td><td>Position identified, link for job lisitngs, document with my analysis.</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="section-9">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">🧾 9. Full Work Breakdown Structure (WBS)</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<table class="stakeholder-table">
-<thead>
-<tr>
-<th>WBS ID</th>
-<th>Level</th>
-<th>Task/Work Package Name</th>
-<th>Duration</th>
-<th>Dependencies (WBS ID &amp; Name)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Deliverable</td>
-<td>Portfolio</td>
-<td>Total 34 days</td>
-<td></td>
-</tr>
-<tr>
-<td>1.1</td>
-<td>Work Package</td>
-<td>Start Portfolio</td>
-<td>3 days</td>
-<td></td>
-</tr>
-<tr>
-<td>1.1.1</td>
-<td>Task</td>
-<td>Decide what platform to develop portfolio on</td>
-<td>1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>1.1.2</td>
-<td>Task</td>
-<td>Decide how porfolio should be organized</td>
-<td>1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>1.1.3</td>
-<td>Task</td>
-<td>Create pages</td>
-<td>1 day</td>
-<td>1.1.1 Decide what platform to develop portfolio on</td>
-</tr>
-<tr>
-<td>1.2</td>
-<td>Work Package</td>
-<td>Develop Home page</td>
-<td>7 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.2.1</td>
-<td>Task</td>
-<td>Create home page layout</td>
-<td>2 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.2.2</td>
-<td>Task</td>
-<td>Add relevant images</td>
-<td>2 days</td>
-<td>1.2.1 Create home page layout</td>
-</tr>
-<tr>
-<td>1.2.3</td>
-<td>Task</td>
-<td>Include elevator pitch</td>
-<td>1 day</td>
-<td>1.2.1 Create home page layout</td>
-</tr>
-<tr>
-<td>1.2.4</td>
-<td>Task</td>
-<td>add naviagtion to other pages</td>
-<td>1 day</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.3</td>
-<td>Work Package</td>
-<td>Develop Works pages</td>
-<td>20 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.3.1</td>
-<td>Task</td>
-<td>Create work page layout</td>
-<td>2 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.3.2</td>
-<td>Task</td>
-<td>Build dashboard</td>
-<td>2 days</td>
-<td>1.3.1 Create work page layout</td>
-</tr>
-<tr>
-<td>1.3.3</td>
-<td>Task</td>
-<td>Add Hollywood farmers market project</td>
-<td>5 days</td>
-<td>4 Data Analytics Project: Hollywood Farmers Market</td>
-</tr>
-<tr>
-<td>1.3.4</td>
-<td>Task</td>
-<td>Add AirBnB Project</td>
-<td>5 days</td>
-<td>5 Data Analytics Project: AirBnB LA</td>
-</tr>
-<tr>
-<td>1.3.5</td>
-<td>Task</td>
-<td>Include interactive design</td>
-<td>5 days</td>
-<td>1.3.3 Add relevant projects/deliverables</td>
-</tr>
-<tr>
-<td>1.3.6</td>
-<td>Task</td>
-<td>Add certificates</td>
-<td>1 day</td>
-<td>3 Google Data Analytics Certificate</td>
-</tr>
-<tr>
-<td>1.4</td>
-<td>Work Package</td>
-<td>Develop contact page</td>
-<td>4 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.4.1</td>
-<td>Task</td>
-<td>Create contact page layout</td>
-<td>2 days</td>
-<td>1.1.3 Create pages</td>
-</tr>
-<tr>
-<td>1.4.2</td>
-<td>Task</td>
-<td>Insert current contact information</td>
-<td>1 day</td>
-<td>1.4.1 Create contact page layout</td>
-</tr>
-<tr>
-<td>1.4.3</td>
-<td>Task</td>
-<td>Add resume pdf</td>
-<td>1 day</td>
-<td>2 Resume</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Deliverable</td>
-<td>Resume</td>
-<td>Total 5 days</td>
-<td></td>
-</tr>
-<tr>
-<td>2.1</td>
-<td>Work Package</td>
-<td>Start Resume</td>
-<td>5 days</td>
-<td></td>
-</tr>
-<tr>
-<td>2.1.1</td>
-<td>Task</td>
-<td>Gather previous resume content</td>
-<td>1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>2.1.2</td>
-<td>Task</td>
-<td>Reformat resume</td>
-<td>2 days</td>
-<td>2.1.1 Gather previous resume content</td>
-</tr>
-<tr>
-<td>2.1.3</td>
-<td>Task</td>
-<td>Update resume with new skills and projects</td>
-<td>2 days</td>
-<td>2.1.1 Gather previous resume content</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Deliverable</td>
-<td>Google Data Analytics Certificate</td>
-<td>Total 10 days</td>
-<td></td>
-</tr>
-<tr>
-<td>3.1</td>
-<td>Work Package</td>
-<td>Start Google Data Analytics Certificate</td>
-<td>10 days</td>
-<td></td>
-</tr>
-<tr>
-<td>3.1.1</td>
-<td>Task</td>
-<td>Research certification requirements</td>
-<td>2 days</td>
-<td></td>
-</tr>
-<tr>
-<td>3.1.2</td>
-<td>Task</td>
-<td>Prepare study schedule</td>
-<td>2 days</td>
-<td>3.1.1 Research certification requiremnts</td>
-</tr>
-<tr>
-<td>3.1.3</td>
-<td>Task</td>
-<td>Complete modules</td>
-<td>5 days (each)</td>
-<td>3.1.2 Prepare study schedule</td>
-</tr>
-<tr>
-<td>3.1.4</td>
-<td>Task</td>
-<td>Take exam</td>
-<td>1 day</td>
-<td>3.1.3 Complete Modules</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Deliverable</td>
-<td>Data Analytics Project: Hollywood Farmers Market</td>
-<td>Total 7 days</td>
-<td></td>
-</tr>
-<tr>
-<td>4.1</td>
-<td>Work Package</td>
-<td>Prepare completed project for portfolio</td>
-<td>7 days</td>
-<td></td>
-</tr>
-<tr>
-<td>4.1.1</td>
-<td>Task</td>
-<td>Gather exsiting files and datasets</td>
-<td>1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>4.1.2</td>
-<td>Task</td>
-<td>Write project summary and key insights</td>
-<td>2 days</td>
-<td>4.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>4.1.3</td>
-<td>Task</td>
-<td>Update and reformat visuals for portfolio</td>
-<td>3 days</td>
-<td>4.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>4.1.4</td>
-<td>Task</td>
-<td>review and polish formatting</td>
-<td>1 day</td>
-<td>4.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Deliverable</td>
-<td>Data Analytics Project: AirBnB LA</td>
-<td>Total 7 days</td>
-<td></td>
-</tr>
-<tr>
-<td>5.1</td>
-<td>Work Package</td>
-<td>Prepare completed project for portfolio</td>
-<td>7 days</td>
-<td></td>
-</tr>
-<tr>
-<td>5.1.1</td>
-<td>Task</td>
-<td>Gather exsiting files and datasets</td>
-<td>1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>5.1.2</td>
-<td>Task</td>
-<td>Write project summary and key insights</td>
-<td>2 days</td>
-<td>5.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>5.1.3</td>
-<td>Task</td>
-<td>Update and reformat visuals for portfolio</td>
-<td>3 days</td>
-<td>5.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>5.1.4</td>
-<td>Task</td>
-<td>review and polish formatting</td>
-<td>1 day</td>
-<td>5.1.1 Gather exsiting files and datasets</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Deliverable</td>
-<td>Job Gap Analysis</td>
-<td>Total 3 days</td>
-<td></td>
-</tr>
-<tr>
-<td>6.1</td>
-<td>Work Package</td>
-<td>Research Data Analytics Position skill requirements/expectations</td>
-<td>2 days</td>
-<td></td>
-<tr>
-<td>6.2</td>
-<td>Work Package</td>
-<td>Job Gap Analysis report</td>
-<td>1 day</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Deliverable</td>
-<td>Job Application</td>
-<td>Total 1 day</td>
-<td></td>
-</tr>
-<tr>
-<td>7.1</td>
-<td>Work Package</td>
-<td>Select Data Analytics Position</td>
-<td>1 day</td>
-<td></td>
-<tr>
-<td>7.2</td>
-<td>Work Package</td>
-<td>Proof of Applying</td>
-<td>1 day</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="section-10">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">💵 10. Project Budget Summary</h2>
-<span class="toggle-icon">▼</span>
-</div>
-<div class="section-content">
-<ul style="list-style: none; padding: 0;">
-<li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;"><strong>Labor Total:</strong> $21,040.00</li>
-<li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;"><strong>Non-Labor Total:</strong> $21,067.00</li>
-<li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;"><strong>Contingency:</strong> $4,246.40</li>
-<li style="padding: 10px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; margin: 5px 0; border-radius: 5px; font-size: 18px;"><strong>Grand Total:</strong> $46,353.40</li>
-</ul>
-</div>
-</div><div class="section" id="section-11"><div class="section-header" onclick="toggleSection(this)"><h2 class="section-title">📊 11. Weekly Status Report</h2><span class="toggle-icon">▼</span></div><div class="section-content"><div class="grid-placeholder">
+    <div class="header">
+        <h1>Data Analytics Job Entry</h1>
+        <p>Project Charter - Managing IT Projects Course</p>
+    </div>
 
-    <h4>Report Meta</h4><div></div><div><strong>Reporting Period</strong><p>Week 7</p></div></div></div><div class="placeholder"><h4>Project Health: 🟢 On Track</h4><p>Executive Summary: Search for resume template. Search for and decide website builder for portfolio. Locate all Data Analytics projects.</p></div><div class="completed-work"><div class="completed-header">✅ Accomplishments This Week</div><ul><li>Confrirm Data Analytics Projects</li><li>Potential Website builders suggested</li><li>Old resume located</li></ul></div><div class="section"><div class="section-header"><h3>📅 Plan for Next Week</h3></div><div class="section-content"><ul><li>Test portfolio website</li><li>Work on data analytics certificate</li><li>Start looking through projects</li><li>Look for job positions in Data Analytics</li></ul></div></div><div class="section"><div class="section-header"><h3>🎯 Upcoming Milestones</h3></div><div class="section-content"><table class="stakeholder-table"><thead><tr><th>Milestone</th><th>Target Date</th><th>Status</th></tr></thead><tbody><tr><td>Google Data Analytics Certificate</td><td>11/29/2025</td><td>AT RISK</td></tr><tr><td>Apply to job position</td><td>12/9/2025</td><td>ON TRACK</td></tr><tr><td>Complete Portfolio</td><td>11/30/2025</td><td>ON TRACK</td></tr></tbody></table></div></div><div class="section"><div class="section-header"><h3>⚠️ Issues &amp; Risks / Mitigations</h3></div><div class="section-content"><p>Risk: None</p><p>Mitigation: None </p></div></div><div class="section"><div class="section-header"><h3>🔄 Changes Since Last Report</h3></div><div class="section-content"><p>No changes occurred since the last reporting period.</p></div></div></div></div>
+    <div class="nav-pills">
+        <div class="nav-pill" onclick="scrollToSection('student-info')">Student Info</div>
+        <div class="nav-pill" onclick="scrollToSection('section-1')">Project Description</div>
+        <div class="nav-pill" onclick="scrollToSection('section-2')">Vision &amp; Mission</div>
+        <div class="nav-pill" onclick="scrollToSection('section-3')">Business Case</div>
+        <div class="nav-pill" onclick="scrollToSection('section-4')">Scope</div>
+        <div class="nav-pill" onclick="scrollToSection('section-5')">Stakeholders</div>
+        <div class="nav-pill" onclick="scrollToSection('section-6')">Methodology</div>
+        <div class="nav-pill" onclick="scrollToSection('section-7')">Tools</div>
+        <div class="nav-pill" onclick="scrollToSection('section-8')">Deliverables</div>
+        <div class="nav-pill" onclick="scrollToSection('section-9')">WBS</div>
+        <div class="nav-pill" onclick="scrollToSection('section-10')">Budget</div>
+        <div class="nav-pill" onclick="scrollToSection('section-11')">Status Report</div>
+    </div>
 
-    <span class="toggle-icon">▼</span></div><div class="section-content"><div class="grid-placeholder"><h4>Report Meta</h4><div></div><div><strong>Reporting Period</strong><p>Week 8</p></div></div></div><div class="placeholder"><h4>Project Health: 🟢 On Track</h4><p>Executive Summary: Data Analytics projects are collected and being organized. Potential webiste builders are being tested.</p></div><div class="completed-work"><div class="completed-header">✅ Accomplishments This Week</div><ul><li>Tested a few webiste builders</li><li>Reviewed Data Analytics Projects</li><li>Worked on course for Data Analytics Certificate</li></ul></div><div class="section"><div class="section-header"><h3>📅 Plan for Next Week</h3></div><div class="section-content"><ul><li>Set up portfolio website</li><li>Work on data analytics certificate</li><li>Start new revised resume</li><li>Look for job positions in Data Analytics</li></ul></div></div><div class="section"><div class="section-header"><h3>🎯 Upcoming Milestones</h3></div><div class="section-content"><table class="stakeholder-table"><thead><tr><th>Milestone</th><th>Target Date</th><th>Status</th></tr></thead><tbody><tr><td>Google Data Analytics Certificate</td><td>11/29/2025</td><td>AT RISK</td></tr><tr><td>Apply to job position</td><td>12/9/2025</td><td>ON TRACK</td></tr><tr><td>Complete Portfolio</td><td>11/30/2025</td><td>ON TRACK</td></tr></tbody></table></div></div><div class="section"><div class="section-header"><h3>⚠️ Issues &amp; Risks / Mitigations</h3></div><div class="section-content"><p>Risk: None</p><p>Mitigation: None</p></div></div><div class="section"><div class="section-header"><h3>🔄 Changes Since Last Report</h3></div><div class="section-content"><p> Progressed to testing websites, starting revised resume, starting project organization</p></div></div></div></div>
+    <div class="content">
+        <!-- Student Info -->
+        <div class="student-info" id="student-info">
+            <h3>Student Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Student Name:</div>
+                    <div class="info-value">Tehreem Fatima Butt</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Course:</div>
+                    <div class="info-value">Managing IT Projects</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Semester:</div>
+                    <div class="info-value">Fall 2025</div>
+                </div>
+            </div>
+        </div>
 
-    <span class="toggle-icon">▼</span></div><div class="section-content"><div class="grid-placeholder"><h4>Report Meta</h4><div></div><div><strong>Reporting Period</strong><p>Week 9</p></div></div></div><div class="placeholder"><h4>Project Health: 🟡 AT RISK</h4><p>Executive Summary: Data Analytics projects are collected and being organized. List of what needs to be updated in the resume created, template I want to use for the resume decided. Concerns about the website base not being set up. A new Data Analytics project may be included in the portfolio.</p></div><div class="completed-work"><div class="completed-header">✅ Accomplishments This Week</div><ul><li>Organize Airbnb LA report</li><li>Organize Hollywood Farmers Market visuals and report</li><li>Checklist of information to update in resume created</li></ul></div><div class="section"><div class="section-header"><h3>📅 Plan for Next Week</h3></div><div class="section-content"><ul><li>Set up portfolio website</li><li>Work on data analytics certificate</li><li>Complete revised resume</li><li>Look for job positions in Data Analytics</li></ul></div></div><div class="section"><div class="section-header"><h3>🎯 Upcoming Milestones</h3></div><div class="section-content"><table class="stakeholder-table"><thead><tr><th>Milestone</th><th>Target Date</th><th>Status</th></tr></thead><tbody><tr><td>Google Data Analytics Certificate</td><td>11/29/2025</td><td>AT RISK</td></tr><tr><td>Apply to job position</td><td>12/9/2025</td><td>ON TRACK</td></tr><tr><td>Complete Portfolio</td><td>11/30/2025</td><td>ON TRACK</td></tr></tbody></table></div></div><div class="section"><div class="section-header"><h3>⚠️ Issues &amp; Risks / Mitigations</h3></div><div class="section-content"><p>Risk: Google Data Analytics Certificate — LOW</p><p>Mitigation: Set aside more time for the course.</p></div></div><div class="section"><div class="section-header"><h3>🔄 Changes Since Last Report</h3></div><div class="section-content"><p>Concerns in being behind on certificate, delay in setting up portfolio website.</p></div></div></div></div>
+        <!-- 1. Project Description -->
+        <div class="section" id="section-1">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">📋 1. Project Title &amp; Description</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>Project Title: Data Analytics Job Entry</h3>
+                <p>Apply to at least one Data Analytics position using compiled material that showcases my skills/projects in an easy-to-navigate way while also being visually interesting.</p>
+            </div>
+        </div>
 
-  <span class="toggle-icon">▼</span></div><div class="section-content"><div class="grid-placeholder"><h4>Report Meta</h4><div></div><div><strong>Reporting Period</strong><p>Week 10</p></div></div></div><div class="placeholder"><h4>Project Health: 🟡 AT RISK</h4><p>Executive Summary: Continuing set up of portfolio website, working on google data analytics certificate, working on new data analytics project, and starting job gap analysis. </p></div><div class="completed-work"><div class="completed-header">✅ Accomplishments This Week</div><ul><li>Progressing on google data analytics certificate</li><li>working on new data analytics project</li><li>Starting job gap analysis</li></ul></div><div class="section"><div class="section-header"><h3>📅 Plan for Next Week</h3></div><div class="section-content"><ul><li>Have the home page set up of the portfolio website</li><li>Work on data analytics certificate</li><li>Look for job positions in Data Analytics</li><li>List skill gaps and start analysis</li></ul></div></div><div class="section"><div class="section-header"><h3>🎯 Upcoming Milestones</h3></div><div class="section-content"><table class="stakeholder-table"><thead><tr><th>Milestone</th><th>Target Date</th><th>Status</th></tr></thead><tbody><tr><td>Google Data Analytics Certificate</td><td>11/29/2025</td><td>AT RISK</td></tr><tr><td>Apply to job position</td><td>12/9/2025</td><td>ON TRACK</td></tr><tr><td>Complete Portfolio</td><td>11/30/2025</td><td>ON TRACK</td></tr></tbody></table></div></div><div class="section"><div class="section-header"><h3>⚠️ Issues &amp; Risks / Mitigations</h3></div><div class="section-content"><p>Risk: Google Data Analytics Certificate — LOW</p><p>Mitigation: Set aside more time for the course.</p></div></div><div class="section"><div class="section-header"><h3>🔄 Changes Since Last Report</h3></div><div class="section-content"><p>Starting a new data anlytics project and starting on the skill gap deliverable. Progress made on the portfolio website.</p></div></div></div></div>
-  
-</div>
-</div>
+        <!-- 2. Vision & Mission -->
+        <div class="section" id="section-2">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">🎯 2. Vision, Mission &amp; Strategy Alignment</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="placeholder">
+                    <h4>Personal Mission Connection:</h4>
+                    <p>My mission is to gain more experience, gain more valuable skills in data analytics, and to actually enjoy the work that I do. This project supports my personal mission by providing a base platform where I can continue to add new skills and projects I will accumulate over time. It provides me with a tangible incentive so I can stay motivated in becoming more skilled in Data Analytics.</p>
+                    <h4>Vision Alignment:</h4>
+                    <p>My vision is to have a data analytics position in a company whose values I align with, and to be recognized for providing valuable analysis that brings improvement to the business. This portfolio will greatly help me find entry in my preferred job market, which is Data Analytics. This portfolio will allow me to confidently submit and pursue positions in data analytics that I would previously not be able to confidently do.</p>
+                    <h4>Strategic Goal Support:</h4>
+                    <p>This will help me accomplish my strategic goal of using the portfolio to apply to at least one Data Analytics internship/position by the end of the semester. Having a collection of all my projects/skills (or overall achievements) that I can easily submit will make showcasing myself to businesses that are hiring more efficient.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Business Case -->
+        <div class="section" id="section-3">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">💼 3. Business Case &amp; Justification</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="placeholder">
+                    <h4>Professional Value:</h4>
+                    <p>This project will help me pursue my preferred career as it will be a collection of all my skills, projects, and achievements.</p>
+                    <h4>Personal Value:</h4>
+                    <p>This project provides me with a tangible incentive to continue improving and adding to. It allows me to organize and evaluate all my skills and projects that I have accumulated so far.</p>
+                    <h4>Learning Outcomes:</h4>
+                    <p>I believe the main takeaway I will get from this project is project management skills. I have never really worked on a long-term project before, and it makes me aware of aspects of managing a project I never thought of before.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Scope -->
+        <div class="section" id="section-4">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">🔍 4. High-Level Scope</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="scope-grid">
+                    <div class="scope-card in-scope">
+                        <h4>✅ In Scope for Semester Project</h4>
+                        <ul>
+                            <li>A responsive website with a clean, professional design</li>
+                            <li>A home page with an introduction and summary about me</li>
+                            <li>A portfolio section showing 2 data analytics projects with visuals and short explanations</li>
+                            <li>A resume page with a downloadable PDF option</li>
+                            <li>A contact form for messages</li>
+                            <li>A section showing relevant certifications (Google Data Analytics)</li>
+                        </ul>
+                    </div>
+                    <div class="scope-card roadmap">
+                        <h4>🗺️ Roadmap Items (≤6 Months)</h4>
+                        <ul>
+                            <li>Interactive dashboards using Tableau, Power BI, or Python</li>
+                            <li>Links to LinkedIn and GitHub for automatic updates</li>
+                            <li>Updates/new project additions</li>
+                            <li>A custom domain name</li>
+                        </ul>
+                    </div>
+                    <div class="scope-card out-scope">
+                        <h4>❌ Out of Scope</h4>
+                        <ul>
+                            <li>Build a big company-level data system</li>
+                            <li>Set up automatic data pipelines that refresh by themselves</li>
+                            <li>Add advanced AI features (like chatbots or recommendations)</li>
+                            <li>Create a mobile app version of the portfolio</li>
+                            <li>Support multiple languages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Stakeholders -->
+        <div class="section" id="section-5">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">👥 5. Stakeholder Register</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <table class="stakeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Stakeholder</th>
+                            <th>Category</th>
+                            <th>Role/Interest</th>
+                            <th>Power</th>
+                            <th>Interest</th>
+                            <th>Engagement Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Professor / Instructor</td>
+                            <td>Internal</td>
+                            <td>Course owner; evaluates deliverables and gives feedback</td>
+                            <td>High</td>
+                            <td>High</td>
+                            <td>Manage Closely – provide regular updates; follow feedback and meet requirements.</td>
+                        </tr>
+                        <tr>
+                            <td>Classmates / Peer Reviewers</td>
+                            <td>Internal</td>
+                            <td>Peers who review drafts and provide feedback</td>
+                            <td>Low</td>
+                            <td>Medium</td>
+                            <td>Keep Informed – share drafts and collect feedback during peer reviews.</td>
+                        </tr>
+                        <tr>
+                            <td>Potential Employers</td>
+                            <td>External</td>
+                            <td>End-audience who will evaluate portfolio quality and relevance</td>
+                            <td>High</td>
+                            <td>High</td>
+                            <td>Manage Closely – ensure the portfolio is professional, relevant, and easy to navigate.</td>
+                        </tr>
+                        <tr>
+                            <td>Family &amp; Friends</td>
+                            <td>External</td>
+                            <td>Support network; provides informal feedback</td>
+                            <td>Low</td>
+                            <td>Medium</td>
+                            <td>Keep Informed – share progress and finished work for encouragement and feedback.</td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn Network</td>
+                            <td>External</td>
+                            <td>Professional network; helps visibility and connections</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td>Keep Informed – publish updates and the portfolio link for discovery.</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub</td>
+                            <td>External</td>
+                            <td>Public code hosting and community visibility</td>
+                            <td>Low</td>
+                            <td>Medium</td>
+                            <td>Monitor – host code/projects; lightly monitor interactions.</td>
+                        </tr>
+                        <tr>
+                            <td>Regulatory (Data Privacy/Academic Integrity Policies)</td>
+                            <td>Regulatory</td>
+                            <td>Policies that the project must comply with</td>
+                            <td>High</td>
+                            <td>Low</td>
+                            <td>Keep Satisfied – follow privacy, copyright, and academic honesty guidelines.</td>
+                        </tr>
+                        <tr>
+                            <td>Future Clients / Project Collaborators</td>
+                            <td>External</td>
+                            <td>Potential partners who may contact based on the portfolio</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td>Keep Informed – use the portfolio as a showcase; respond to inquiries.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="grid-placeholder">
+                    <h4>Power–Interest Grid</h4>
+                    <div>
+                        <div style="border-left:4px solid #4caf50;">
+                            <strong>Manage Closely (High Power, High Interest)</strong>
+                            <ul>
+                                <li>Professor / Instructor</li>
+                                <li>Potential Employers</li>
+                            </ul>
+                        </div>
+                        <div style="border-left:4px solid #ffc107;">
+                            <strong>Keep Satisfied (High Power, Low Interest)</strong>
+                            <ul>
+                                <li>Regulatory (Data Privacy/Academic Integrity Policies)</li>
+                            </ul>
+                        </div>
+                        <div style="border-left:4px solid #2196f3;">
+                            <strong>Keep Informed (Low Power, High Interest)</strong>
+                            <ul>
+                                <li>Classmates / Peer Reviewers</li>
+                                <li>LinkedIn Network</li>
+                                <li>Future Clients / Project Collaborators</li>
+                            </ul>
+                        </div>
+                        <div style="border-left:4px solid #9e9e9e;">
+                            <strong>Monitor (Low Power, Low Interest)</strong>
+                            <ul>
+                                <li>GitHub</li>
+                                <li>Family &amp; Friends</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 6. Methodology -->
+        <div class="section" id="section-6">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">⚙️ 6. Project Methodology</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>Explanation:</h3>
+                <div class="placeholder">
+                    <h4>My requirements are well-defined and unlikely to change → Predictive</h4>
+                    <p>For my project, predictive is a good methodology as it is straightforward and works with my schedule throughout the semester. It defines a start and an end which allows me to stay on task, and lets me comfortably build my portfolio piece by piece.</p>
+                </div>
+                <img alt="Project Roadmap" src="Roadmap.png"/>
+            </div>
+        </div>
+
+        <!-- 7. Tools -->
+        <div class="section" id="section-7">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">🛠️ 7. Project Tool Selection</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>Explanation:</h3>
+                <div class="placeholder">
+                    <h4>I chose Microsoft Project (Planner)</h4>
+                    <p>I chose Microsoft Project (Planner) as my tool for this project because it is well-suited for predictive project management. My project has a fixed end date at the end of the semester, and Microsoft Project allows me to create a detailed schedule with clear dependencies, milestones, and deadlines. Its calendar functionality helps visualize the timeline, ensuring tasks are completed in sequence and on time. This level of structure and control supports the predictive methodology's focus on upfront planning and minimizing risks.</p>
+                </div>
+                <img alt="Microsoft Planner Screenshot" src="pm_microsoftPlanner.png"/>
+            </div>
+        </div>
+
+        <!-- 8. Deliverables -->
+        <div class="section" id="section-8">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">📦 8. Deliverables &amp; Definition of Done</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <table class="stakeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Deliverable Name</th>
+                            <th>Type</th>
+                            <th>SMART Description</th>
+                            <th>Definition of Done</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Resume</td>
+                            <td>Tangible Outcome</td>
+                            <td>A complete and updated resume with all areas filled out, organized, and reviewed. Complete by the end of the semester (December).</td>
+                            <td>All sections filled. Updated to the most current information. Reviewed by trusted individuals.</td>
+                        </tr>
+                        <tr>
+                            <td>Hollywood Farmers Market Data Analytics Project</td>
+                            <td>Tangible Outcome</td>
+                            <td>Updated, compiled, and polished analytics project that will be ready by October.</td>
+                            <td>The project is formatted for the portfolio, all relevant visualizations are compiled and organized, and the project is reviewed by trusted individuals.</td>
+                        </tr>
+                        <tr>
+                            <td>AirBnB LA Data Analytics Project</td>
+                            <td>Tangible Outcome</td>
+                            <td>Updated, compiled, and polished analytics project that will be ready by October.</td>
+                            <td>The project is formatted for the portfolio, all relevant visualizations are compiled and organized, and the project is reviewed by trusted individuals.</td>
+                        </tr>
+                        <tr>
+                            <td>Google Data Analytics Certificate</td>
+                            <td>Tangible Outcome</td>
+                            <td>Complete Data Analytics certification provided by Google by the end of the semester (December).</td>
+                            <td>The certificate is granted and ready to be uploaded into my portfolio.</td>
+                        </tr>
+                        <tr>
+                            <td>Job Application</td>
+                            <td>Tangible Outcome</td>
+                            <td>Submit one complete application for a Data Analytics internship/position using the portfolio by December 2025.</td>
+                            <td>Position identified, portfolio link included in application, customized materials submitted, confirmation received.</td>
+                        </tr>
+                        <tr>
+                            <td>Job Gap Analysis</td>
+                            <td>Tangible Outcome</td>
+                            <td>Research and create document discussing skill expectations of Data Analytics positions comparing to my current skills by December 2025.</td>
+                            <td>Position(s) identified, links for job listings included, document with my analysis completed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 9. WBS -->
+        <div class="section" id="section-9">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">🧾 9. Full Work Breakdown Structure (WBS)</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <!-- WBS table unchanged from your file -->
+                <table class="stakeholder-table">
+                    <thead>
+                        <tr>
+                            <th>WBS ID</th>
+                            <th>Level</th>
+                            <th>Task/Work Package Name</th>
+                            <th>Duration</th>
+                            <th>Dependencies (WBS ID &amp; Name)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- (same rows as your original; omitted here for brevity if you want you can paste all your WBS rows back in) -->
+                        <!-- START of your WBS rows -->
+                        <tr><td>1</td><td>Deliverable</td><td>Portfolio</td><td>Total 34 days</td><td></td></tr>
+                        <tr><td>1.1</td><td>Work Package</td><td>Start Portfolio</td><td>3 days</td><td></td></tr>
+                        <tr><td>1.1.1</td><td>Task</td><td>Decide what platform to develop portfolio on</td><td>1 day</td><td></td></tr>
+                        <tr><td>1.1.2</td><td>Task</td><td>Decide how portfolio should be organized</td><td>1 day</td><td></td></tr>
+                        <tr><td>1.1.3</td><td>Task</td><td>Create pages</td><td>1 day</td><td>1.1.1 Decide what platform to develop portfolio on</td></tr>
+                        <tr><td>1.2</td><td>Work Package</td><td>Develop Home page</td><td>7 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.2.1</td><td>Task</td><td>Create home page layout</td><td>2 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.2.2</td><td>Task</td><td>Add relevant images</td><td>2 days</td><td>1.2.1 Create home page layout</td></tr>
+                        <tr><td>1.2.3</td><td>Task</td><td>Include elevator pitch</td><td>1 day</td><td>1.2.1 Create home page layout</td></tr>
+                        <tr><td>1.2.4</td><td>Task</td><td>Add navigation to other pages</td><td>1 day</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.3</td><td>Work Package</td><td>Develop Works pages</td><td>20 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.3.1</td><td>Task</td><td>Create work page layout</td><td>2 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.3.2</td><td>Task</td><td>Build dashboard</td><td>2 days</td><td>1.3.1 Create work page layout</td></tr>
+                        <tr><td>1.3.3</td><td>Task</td><td>Add Hollywood Farmers Market project</td><td>5 days</td><td>4 Data Analytics Project: Hollywood Farmers Market</td></tr>
+                        <tr><td>1.3.4</td><td>Task</td><td>Add AirBnB Project</td><td>5 days</td><td>5 Data Analytics Project: AirBnB LA</td></tr>
+                        <tr><td>1.3.5</td><td>Task</td><td>Include interactive design</td><td>5 days</td><td>1.3.3 Add relevant projects/deliverables</td></tr>
+                        <tr><td>1.3.6</td><td>Task</td><td>Add certificates</td><td>1 day</td><td>3 Google Data Analytics Certificate</td></tr>
+                        <tr><td>1.4</td><td>Work Package</td><td>Develop contact page</td><td>4 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.4.1</td><td>Task</td><td>Create contact page layout</td><td>2 days</td><td>1.1.3 Create pages</td></tr>
+                        <tr><td>1.4.2</td><td>Task</td><td>Insert current contact information</td><td>1 day</td><td>1.4.1 Create contact page layout</td></tr>
+                        <tr><td>1.4.3</td><td>Task</td><td>Add resume pdf</td><td>1 day</td><td>2 Resume</td></tr>
+                        <tr><td>2</td><td>Deliverable</td><td>Resume</td><td>Total 5 days</td><td></td></tr>
+                        <tr><td>2.1</td><td>Work Package</td><td>Start Resume</td><td>5 days</td><td></td></tr>
+                        <tr><td>2.1.1</td><td>Task</td><td>Gather previous resume content</td><td>1 day</td><td></td></tr>
+                        <tr><td>2.1.2</td><td>Task</td><td>Reformat resume</td><td>2 days</td><td>2.1.1 Gather previous resume content</td></tr>
+                        <tr><td>2.1.3</td><td>Task</td><td>Update resume with new skills and projects</td><td>2 days</td><td>2.1.1 Gather previous resume content</td></tr>
+                        <tr><td>3</td><td>Deliverable</td><td>Google Data Analytics Certificate</td><td>Total 10 days</td><td></td></tr>
+                        <tr><td>3.1</td><td>Work Package</td><td>Start Google Data Analytics Certificate</td><td>10 days</td><td></td></tr>
+                        <tr><td>3.1.1</td><td>Task</td><td>Research certification requirements</td><td>2 days</td><td></td></tr>
+                        <tr><td>3.1.2</td><td>Task</td><td>Prepare study schedule</td><td>2 days</td><td>3.1.1 Research certification requirements</td></tr>
+                        <tr><td>3.1.3</td><td>Task</td><td>Complete modules</td><td>5 days (each)</td><td>3.1.2 Prepare study schedule</td></tr>
+                        <tr><td>3.1.4</td><td>Task</td><td>Take exam</td><td>1 day</td><td>3.1.3 Complete Modules</td></tr>
+                        <tr><td>4</td><td>Deliverable</td><td>Data Analytics Project: Hollywood Farmers Market</td><td>Total 7 days</td><td></td></tr>
+                        <tr><td>4.1</td><td>Work Package</td><td>Prepare completed project for portfolio</td><td>7 days</td><td></td></tr>
+                        <tr><td>4.1.1</td><td>Task</td><td>Gather existing files and datasets</td><td>1 day</td><td></td></tr>
+                        <tr><td>4.1.2</td><td>Task</td><td>Write project summary and key insights</td><td>2 days</td><td>4.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>4.1.3</td><td>Task</td><td>Update and reformat visuals for portfolio</td><td>3 days</td><td>4.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>4.1.4</td><td>Task</td><td>Review and polish formatting</td><td>1 day</td><td>4.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>5</td><td>Deliverable</td><td>Data Analytics Project: AirBnB LA</td><td>Total 7 days</td><td></td></tr>
+                        <tr><td>5.1</td><td>Work Package</td><td>Prepare completed project for portfolio</td><td>7 days</td><td></td></tr>
+                        <tr><td>5.1.1</td><td>Task</td><td>Gather existing files and datasets</td><td>1 day</td><td></td></tr>
+                        <tr><td>5.1.2</td><td>Task</td><td>Write project summary and key insights</td><td>2 days</td><td>5.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>5.1.3</td><td>Task</td><td>Update and reformat visuals for portfolio</td><td>3 days</td><td>5.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>5.1.4</td><td>Task</td><td>Review and polish formatting</td><td>1 day</td><td>5.1.1 Gather existing files and datasets</td></tr>
+                        <tr><td>6</td><td>Deliverable</td><td>Job Gap Analysis</td><td>Total 3 days</td><td></td></tr>
+                        <tr><td>6.1</td><td>Work Package</td><td>Research Data Analytics position skill requirements/expectations</td><td>2 days</td><td></td></tr>
+                        <tr><td>6.2</td><td>Work Package</td><td>Job Gap Analysis report</td><td>1 day</td><td></td></tr>
+                        <tr><td>7</td><td>Deliverable</td><td>Job Application</td><td>Total 1 day</td><td></td></tr>
+                        <tr><td>7.1</td><td>Work Package</td><td>Select Data Analytics position</td><td>1 day</td><td></td></tr>
+                        <tr><td>7.2</td><td>Work Package</td><td>Proof of Applying</td><td>1 day</td><td></td></tr>
+                        <!-- END of your WBS rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 10. Budget -->
+        <div class="section" id="section-10">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">💵 10. Project Budget Summary</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;">
+                        <strong>Labor Total:</strong> $21,040.00
+                    </li>
+                    <li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;">
+                        <strong>Non-Labor Total:</strong> $21,067.00
+                    </li>
+                    <li style="padding: 10px; background: #f8f9fa; margin: 5px 0; border-radius: 5px;">
+                        <strong>Contingency:</strong> $4,246.40
+                    </li>
+                    <li style="padding: 10px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; margin: 5px 0; border-radius: 5px; font-size: 18px;">
+                        <strong>Grand Total:</strong> $46,353.40
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 11. Weekly Status Reports (reorganized) -->
+        <div class="section" id="section-11">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2 class="section-title">📊 11. Weekly Status Reports</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <p class="status-intro">
+                    Weekly snapshot of project health, key accomplishments, upcoming work, and risks.
+                </p>
+
+                <div class="status-legend">
+                    <span><span class="status-dot green"></span>On Track</span>
+                    <span><span class="status-dot yellow"></span>At Risk</span>
+                    <span><span class="status-dot red"></span>Off Track</span>
+                </div>
+
+                <div class="status-weeks">
+
+                    <!-- Week 15 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 15</div>
+                                <div class="status-week-period">Reporting Period: Week 15</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟡 At Risk</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Finalized all deliverables and preparing to apply for the chosen position.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Finalized portfolio</li>
+                                        <li>added data analytics projects to portfolio</li>
+                                        <li>Continuing progress on google data analytics certificate</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Apply to a job position</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Work on charter and closure document</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/30/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate</p>
+                                    <p><strong>Mitigation:</strong> Continue making progress on it and delay the deliverable.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Week 14 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 14</div>
+                                <div class="status-week-period">Reporting Period: Week 14</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟡 At Risk</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Deliverables are reaching final state, continuing progress on certficate despite delay.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Reviewed and completed data analytics projects</li>
+                                        <li>Continue progress of certificate</li>
+                                        <li>Finalize position I will apply to.</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Complete portfolio</li>
+                                        <li>Add final two data analytics projects to portfolio</li>
+                                        <li>Continue certificate</li>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/30/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate</p>
+                                    <p><strong>Mitigation:</strong> Continue making progress on it and delay the deliverable.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Week 13 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 13</div>
+                                <div class="status-week-period">Reporting Period: Week 13</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟡 At Risk</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Completed the job gap analysis deliverable while continuing to make consistent progress with the portfolio and projects.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Complete Job Gap analysis</li>
+                                        <li>Progress on data analytics projects</li>
+                                        <li>Progress on Portfolio</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Start finalazing Porfolio website</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Contiue working on the two data analytics projects</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/30/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate</p>
+                                    <p><strong>Mitigation:</strong> Continue making progress on it and delay the deliverable.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Week 12 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 12</div>
+                                <div class="status-week-period">Reporting Period: Week 12</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟡 At Risk</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Make progress on job gap analysis, working on data analytics project, making an addition of one more project to add to portfolio.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Progress on the two Data Analytics Projects</li>
+                                        <li>Working on portfolio</li>
+                                        <li>Working on certificate</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Wrap up job gap analysis</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Continue data analytics projects</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate — <em>Low</em></p>
+                                    <p><strong>Mitigation:</strong> Set aside more time for the course.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Week 11 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 11</div>
+                                <div class="status-week-period">Reporting Period: Week 11</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟡 At Risk</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Finalizing resume, making steady progress on the google data analytics certifacte though it will be delayed, and identifying data anlaytics positions I want to apply to and will analyze.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Making more progress on the data analytics certificate</li>
+                                        <li>Finished resume update</li>
+                                        <li>doing data analytics research</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Continue Data Analytics certificate</li>
+                                        <li>Start finalizing portoflio</li>
+                                        <li>Make progress on data analytics projects</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate — <em>Low</em></p>
+                                    <p><strong>Mitigation:</strong> Set aside more time for the course.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Week 10 -->
+                    <div class="status-week">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 10</div>
+                                <div class="status-week-period">Reporting Period: Week 10</div>
+                            </div>
+                            <div class="status-health-pill status-yellow">🟢 On Track</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Continuing setup of portfolio website, working on Google Data Analytics certificate, working on new data analytics project, and starting job gap analysis.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Progressing on Google Data Analytics certificate</li>
+                                        <li>Working on new data analytics project</li>
+                                        <li>Starting job gap analysis</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Have the home page set up for the portfolio website</li>
+                                        <li>Continue work on Google Data Analytics certificate</li>
+                                        <li>Look for job positions in Data Analytics</li>
+                                        <li>List skill gaps and start analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate — <em>Low</em></p>
+                                    <p><strong>Mitigation:</strong> Set aside more time for the course.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>Starting a new data analytics project and starting on the skill gap deliverable. Progress made on the portfolio website.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 9 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 9</div>
+                                <div class="status-week-period">Reporting Period: Week 9</div>
+                            </div>
+                            <div class="status-health-pill status-yellow">🟢 On Track</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Data analytics projects are collected and being organized. List of what needs to be updated in the resume created, and template for the resume decided. Concerns about the website base not being set up. A new data analytics project may be included in the portfolio.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Organized Airbnb LA report</li>
+                                        <li>Organized Hollywood Farmers Market visuals and report</li>
+                                        <li>Checklist of information to update in resume created</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Set up portfolio website</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Complete revised resume</li>
+                                        <li>Look for job positions in Data Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> Google Data Analytics Certificate — <em>Low</em></p>
+                                    <p><strong>Mitigation:</strong> Set aside more time for the course.</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>Concerns about being behind on certificate and delay in setting up portfolio website.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 8 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 8</div>
+                                <div class="status-week-period">Reporting Period: Week 8</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟢 On Track</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Data analytics projects are collected and being organized. Potential website builders are being tested.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Tested a few website builders</li>
+                                        <li>Reviewed data analytics projects</li>
+                                        <li>Worked on course for Data Analytics certificate</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Set up portfolio website</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Start new revised resume</li>
+                                        <li>Look for job positions in Data Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> None</p>
+                                    <p><strong>Mitigation:</strong> None</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>Progressed to testing websites, starting revised resume, and starting project organization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 7 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 7</div>
+                                <div class="status-week-period">Reporting Period: Week 7</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟢 On Track</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Search for resume template. Search for and decide website builder for portfolio. Locate all data analytics projects.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Confirmed data analytics projects</li>
+                                        <li>Potential website builders suggested</li>
+                                        <li>Old resume located</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Test portfolio websites</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Start looking through projects</li>
+                                        <li>Look for job positions in Data Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> None</p>
+                                    <p><strong>Mitigation:</strong> None</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 6 -->
+                    <div class="status-week collapsed">
+                        <div class="status-week-header" onclick="toggleStatusWeek(this)">
+                            <div class="status-week-main">
+                                <div class="status-week-label">Week 6</div>
+                                <div class="status-week-period">Reporting Period: Week 6</div>
+                            </div>
+                            <div class="status-health-pill status-green">🟢 On Track</div>
+                        </div>
+                        <div class="status-week-body">
+                            <div class="status-exec">
+                                <strong>Executive Summary</strong>
+                                <p>Project start, review all tasks, and starting of Google Data Analytics certificate.</p>
+                            </div>
+
+                            <div class="status-grid-2col">
+                                <div class="status-card">
+                                    <h4>✅ Accomplishments This Week</h4>
+                                    <ul>
+                                        <li>Reprioritized/reviewed tasks</li>
+                                        <li>Searched for website builders or other methods to create portfolio</li>
+                                        <li>Started Google Data Analytics certificate</li>
+                                    </ul>
+                                </div>
+                                <div class="status-card">
+                                    <h4>📅 Plan for Next Week</h4>
+                                    <ul>
+                                        <li>Research and review portfolio creation options</li>
+                                        <li>Work on data analytics certificate</li>
+                                        <li>Locate data analysis projects</li>
+                                        <li>Start on resume deliverable</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="status-bottom-grid">
+                                <div class="status-card">
+                                    <h4>🎯 Upcoming Milestones</h4>
+                                    <table class="status-milestones-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Milestone</th>
+                                                <th>Target Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Google Data Analytics Certificate</td>
+                                                <td>11/29/2025</td>
+                                                <td>AT RISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apply to job position</td>
+                                                <td>12/09/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complete Portfolio</td>
+                                                <td>11/30/2025</td>
+                                                <td>ON TRACK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="status-card">
+                                    <h4>⚠️ Issues &amp; Risks / Mitigations</h4>
+                                    <p><strong>Risk:</strong> None</p>
+                                    <p><strong>Mitigation:</strong> None</p>
+                                    <h4 style="margin-top:10px;">🔄 Changes Since Last Report</h4>
+                                    <p>No changes occurred since the last reporting period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.status-weeks -->
+            </div>
+        </div>
+
+    </div> <!-- /.content -->
+</div> <!-- /.container -->
+
 <script>
 function toggleSection(header) {
     const section = header.parentElement;
@@ -1159,6 +1856,11 @@ function scrollToSection(id) {
     if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+function toggleStatusWeek(header) {
+    const week = header.parentElement;
+    week.classList.toggle('collapsed');
 }
 </script>
 </body>
